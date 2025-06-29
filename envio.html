@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Tu pedido va en camino!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 480px;
+      position: relative;
+    }
+
+    .container h2 {
+      color: #1e88e5;
+      margin-bottom: 20px;
+    }
+
+    .container p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .truck {
+      font-size: 60px;
+      animation: moveTruck 2s infinite linear;
+      display: inline-block;
+    }
+
+    @keyframes moveTruck {
+      0% { transform: translateX(-10px); }
+      50% { transform: translateX(10px); }
+      100% { transform: translateX(-10px); }
+    }
+
+    .progress-bar {
+      width: 100%;
+      background: #e0e0e0;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      margin-top: 20px;
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(to right, #42a5f5, #1e88e5);
+      width: 0;
+      animation: fillProgress 5s forwards;
+    }
+
+    .success {
+      color: #43a047;
+      font-size: 18px;
+      margin-top: 20px;
+      display: none;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .brands {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+
+    .brands button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .brands button:hover {
+      background: #e65c00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="truck">🚚</div>
+    <h2>¡Tu pedido va en camino!</h2>
+    <p>Estamos preparando tu envío con mucho cuidado. Muy pronto lo recibirás en la dirección indicada.</p>
+
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+
+    <div class="success" id="msgEntrega">✅ Estimado cliente, tu producto llegará en las próximas horas.</div>
+
+  <div class="brands">
+   <div><a href="pagina_prin.php"><button>Página principal</button></a></div>
+      
+      
+</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("msgEntrega").style.display = "block";
+    }, 5000);
+  </script>
+
+
+</body>
+</html>
+
